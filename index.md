@@ -1,9 +1,4 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudhakar Muthumani</title>
-</head>
+
 <style>
 /* ---- reset ---- */
 body {
@@ -45,7 +40,6 @@ h1 {
 }
 
 </style>
-<body>
   <!-- particles.js container -->
 <div id="particles-js">
   <h1>Coming soon
@@ -169,4 +163,4 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 </script>
-</html>
+
