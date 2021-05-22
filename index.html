@@ -6,171 +6,197 @@
     <title>Sudhakar Muthumani</title>
 </head>
 <style>
-    /* ---- reset ---- */
-    
     body {
-        margin: 0;
-        font: normal 75% Arial, Helvetica, sans-serif;
+        background: #010;
+        -webkit-filter: blur(0.7px);
+        filter: blur(0.7px);
+        overflow: hidden;
+        font-family: monospace;
     }
     
-    canvas {
-        display: block;
-        vertical-align: bottom;
+    .skype-call {
+        position: fixed;
+        top: 30px;
+        right: 30px;
     }
-    /* ---- particles.js container ---- */
     
-    #particles-js {
+    .preview {
+        position: relative;
+        width: 330px;
+        height: 230px;
+        background-color: #030403;
+        -webkit-box-shadow: 0px 2px 29px 3px rgba(10, 9, 10, 1);
+        -moz-box-shadow: 0px 2px 29px 3px rgba(10, 9, 10, 1);
+        box-shadow: 0px 2px 29px 3px rgba(10, 9, 10, 1);
+    }
+    
+    .btn {
         position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: #F5A623;
+        font: 13px sans-serif;
+        font-weight: bold;
+        padding: 2px 4px;
+        margin: 4px 4px;
+        border: 0;
+        outline: 0px;
+        z-index: 10;
+    }
+    
+    .circle {
+        display: inline-block;
+        vertical-align: middle;
+        width: 7px;
+        height: 7px;
+        margin: 0px 4px 2px 0px;
+        border-radius: 50%;
+        background-color: black;
+        -webkit-animation-name: blinker;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-name: blinker;
+        -moz-animation-duration: 2s;
+        -moz-animation-timing-function: linear;
+        -moz-animation-iteration-count: infinite;
+        animation-name: blinker;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    
+    .video {
+        position: absolute;
+        top: 0px;
         width: 100%;
         height: 100%;
-        background-color: #323840;
-        background-image: url("");
-        background-repeat: no-repeat;
         background-size: cover;
-        background-position: 50% 50%;
+        animation: fade 1s linear;
+        -webkit-animation: fade 1s linear;
+        -moz-animation: fade 1s linear;
+        animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: forwards;
     }
     
-    h1 {
-        box-sizing: border-box;
+    @-moz-keyframes blinker {
+        0% {
+            opacity: 1.0;
+        }
+        50% {
+            opacity: 0.18;
+        }
+        100% {
+            opacity: 1.0;
+        }
+    }
+    
+    @-webkit-keyframes blinker {
+        0% {
+            opacity: 1.0;
+        }
+        50% {
+            opacity: 0.18;
+        }
+        100% {
+            opacity: 1.0;
+        }
+    }
+    
+    @keyframes blinker {
+        0% {
+            opacity: 1.0;
+        }
+        50% {
+            opacity: 0.18;
+        }
+        100% {
+            opacity: 1.0;
+        }
+    }
+    
+    .scanlines {
+        pointer-events: none;
         position: fixed;
-        font-family: "Source Sans Pro", sans-serif;
-        font-size: 28px;
-        z-index: 50;
-        top: 50%;
-        left: 50%;
-        right: 0;
-        width: 300px;
-        margin: -28px 0 0 -150px;
-        text-align: center;
-        color: #fff;
-        padding: 10px 0px;
-        border: solid 3px #fff;
-        font-weight: 600;
-        text-transform: uppercase;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: -webkit-linear-gradient(rgba(70, 70, 70, 0.6) 0%, transparent 25%)!important;
+        background-image: linear-gradient(to, transparent 25%)!important;
+        background-size: 1px 3px;
+    }
+    
+    .editor-text {
+        color: #9F9 !important;
+        font-size: 1em;
+        text-shadow: 1px 0px 5px #0F0, -1px 0px 2px #0F0 !important;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
     }
 </style>
 
-<body>
-    <!-- particles.js container -->
-    <div id="particles-js">
-        <h1>Download Resume <a href="assets/Sudhakar.pdf" style="color:white;" download>HERE</a>
-            <br> FOR MORE DETAILS:
-            <br>
-            <a href="mailto:msudhakar724@gmail.com" style="color: white;">Mail here</a>
-        </h1>
-    </div>
-    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-</body>
-<script>
-    // This Pen is a fork of Mesut Koca's Pen : 
-    // https://codepen.io/koca/details/eNJVKQ#forks
-    // Thanks to him !
 
-    particlesJS("particles-js", {
-        "particles": {
-            "number": {
-                "value": 88,
-                "density": {
-                    "enable": true,
-                    "value_area": 700
-                }
-            },
-            "color": {
-                "value": ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
-            },
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                },
-                "polygon": {
-                    "nb_sides": 15
-                }
-            },
-            "opacity": {
-                "value": 0.5,
-                "random": false,
-                "anim": {
-                    "enable": false,
-                    "speed": 1.5,
-                    "opacity_min": 0.15,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 2.5,
-                "random": false,
-                "anim": {
-                    "enable": true,
-                    "speed": 2,
-                    "size_min": 0.15,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 110,
-                "color": "#33b1f8",
-                "opacity": 0.25,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 1.6,
-                "direction": "none",
-                "random": false,
-                "straight": false,
-                "out_mode": "out",
-                "bounce": false,
-                "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": false,
-                    "mode": "repulse"
-                },
-                "onclick": {
-                    "enable": true,
-                    "mode": "push"
-                },
-                "resize": true
-            },
-            "modes": {
-                "grab": {
-                    "distance": 400,
-                    "line_linked": {
-                        "opacity": 1
-                    }
-                },
-                "bubble": {
-                    "distance": 400,
-                    "size": 40,
-                    "duration": 2,
-                    "opacity": 8,
-                    "speed": 3
-                },
-                "repulse": {
-                    "distance": 200,
-                    "duration": 0.4
-                },
-                "push": {
-                    "particles_nb": 4
-                },
-                "remove": {
-                    "particles_nb": 2
-                }
-            }
-        },
-        "retina_detect": true
+
+<div class="perspector">
+    <pre class="element perspectiveText">
+         <code class="highlighter editor-text" data-manual><div id="console">two_step_auth_command.bui<br><br>==*=*- for agent 54348<br><br>Username: Sudhakar<br>Password: ********************<br><br><br>ACCESS TO SYSTEM GRANTED<br><br>Version 3.2654.2<br>Initializing...<br><br>
+          |\__/,|   (`\
+        _.|o o  |_   ) )
+  ---(((---(((-----------------------------------------------------
+  
+ <br>I am Sudhakar, Started working as a developer and has been leading the OWASP Thoothukudi Chapter. Wanna know more about me <a href="mailto:msudhakar724@gmail.com">Click here</a>. Want to hire me? <a href="assets/Sudhakar.pdf">Download Resume</a>
+                                 |        |
+                                 |\      /|
+                                 | \____/ |
+                                 |  /\/\  |
+                                .'___  ___`.
+                               /  \|/  \|/  \                
+              _.--------------( ____ __ _____)
+           .-' \  -. | | | | | \ ----\/---- /
+         .'\  | | / \` | | | |  `.  -'`-  .'
+        /`  ` ` '/ / \ | | | | \  `------'\
+       /-  `-------.' `-----.       -----. `---.
+      (  / | | | |  )/ | | | )/ | | | | | ) | | )
+       `._________.'_____,,,/\_______,,,,/_,,,,/  
+  ------           --       --          ---     --------------------               
+  
+       <br>/*Greetings from the internet, */<br>
+Social Media Links:
+<br>
+<a href="https://www.linkedin.com/in/sudhakarmuthumani">LinkedIn</a>
+<br><a href="https://www.instagram.com/sudhakar_._m">Instagram</a>
+<br><a href="https://twitter.com/Sudhakarmuthu04">Twitter</a>
+<br><a href="https://www.facebook.com/sudhakarmuthumani04">Facebook</a></div>
+  </code>
+  <div class='scanlines'></div>
+      </pre>
+</div>
+<script>
+    $(function() {
+
+        var text = $(".element code").html()
+
+        $(".highlighter").typed({
+            strings: [text],
+            contentType: 'html',
+            typeSpeed: -35,
+            cursorChar: '&#9608;'
+        });
+
+        var scrolltobottom = setInterval(function() {
+            window.scrollTo(0, document.body.scrollHeight)
+        }, 600);
+
+        function f() {
+            clearInterval(scrolltobottom);
+        }
+        setTimeout(f, 55000)
     });
 </script>
 
